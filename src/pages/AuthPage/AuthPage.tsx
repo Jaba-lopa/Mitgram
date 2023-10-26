@@ -1,7 +1,9 @@
+import cl from './AuthPage.module.scss'
+import AuthForm from "./widgets/AuthForm/AuthForm";
 const AuthPage = () => {
     return(
-        <div>
-            AuthPage
+        <div className={cl.AuthPage}>
+            <AuthForm />
         </div>
     )
 }

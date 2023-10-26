@@ -22,18 +22,38 @@ const UserStore = observable({
         this.setIsPending(false)
     },
 
+    async login(email: string, password: string) {
+        this.setIsPending(true)
+        try{
+            const response = await AuthService.login(email, password)
+            this.setUser(response.data.user)
+        } catch(err) {
+            console.log(err)
+        }
+        this.setIsPending(false)
+    },
+
     async checkIsAuth() {
         this.setIsPending(true)
         try{
-            console.log('start isAuth')
             const response = await AuthService.isAuth();
-            console.log('response: ', response.data)
             this.setUser(response.data.user)
             console.log('user: ', this.user)
         } catch(err) {
             console.log(err)
         }
         this.setIsPending(false)
-    }
+    },
+
+    async logout() {
+        this.setIsPending(true)
+        try{
+            await AuthService.logout();
+            this.setUser({} as UserDto)
+        } catch(err) {
+            console.log(err)
+        }
+        this.setIsPending(false)
+    },
 })
 export default UserStore;

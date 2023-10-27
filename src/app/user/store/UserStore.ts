@@ -2,9 +2,13 @@ import { observable } from "mobx";
 import { UserDto } from "../model/UserDto";
 import { AuthService } from "../services/AuthService";
 const UserStore = observable({
-    user: <UserDto>{},
+    user: {} as UserDto,
     setUser(userDto: UserDto) {
-        this.user = userDto
+        this.user = userDto;
+    },
+    isAuth: false,
+    setIsAuth(bool: boolean){
+        this.isAuth = bool;
     },
     isPending: false,
     setIsPending(bool: boolean) {
@@ -15,7 +19,8 @@ const UserStore = observable({
         this.setIsPending(true)
         try{
             const response = await AuthService.register(email, password, username)
-            this.setUser(response.data.user)
+            UserStore.setUser(response.data.user)
+            UserStore.setIsAuth(true)
         } catch(err) {
             console.log(err)
         }
@@ -26,7 +31,8 @@ const UserStore = observable({
         this.setIsPending(true)
         try{
             const response = await AuthService.login(email, password)
-            this.setUser(response.data.user)
+            UserStore.setUser(response.data.user)
+            UserStore.setIsAuth(true)
         } catch(err) {
             console.log(err)
         }
@@ -37,8 +43,8 @@ const UserStore = observable({
         this.setIsPending(true)
         try{
             const response = await AuthService.isAuth();
-            this.setUser(response.data.user)
-            console.log('user: ', this.user)
+            UserStore.setUser(response.data.user)
+            UserStore.setIsAuth(response.data.isAuth)
         } catch(err) {
             console.log(err)
         }
@@ -49,7 +55,8 @@ const UserStore = observable({
         this.setIsPending(true)
         try{
             await AuthService.logout();
-            this.setUser({} as UserDto)
+            UserStore.setUser({} as UserDto)
+            this.setIsAuth(false)
         } catch(err) {
             console.log(err)
         }

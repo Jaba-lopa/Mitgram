@@ -1,0 +1,17 @@
+@import 'app/globalVariables';
+
+.LayoutPage {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.RoomsList{
+    background-color: $primaryColor;
+    width: 30vw;
+    height: 100vh;
+}
+
+.RoomItem{
+
+}

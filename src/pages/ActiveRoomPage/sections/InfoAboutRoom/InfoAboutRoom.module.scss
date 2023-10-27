@@ -1,0 +1,24 @@
+@import 'app/globalVariables';
+
+.InfoAboutRoom{
+    background-color: $primaryColor;
+    height: 100%;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    // outline:1px /// #4e4e50;
+    // outline-offset:-4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+    .roomName{
+        font-size: 0.8rem;
+        color: #fff;
+    }
+    .roomCountMembers {
+        font-size: 0.7rem;
+        color: #afafb8;
+    }
+}

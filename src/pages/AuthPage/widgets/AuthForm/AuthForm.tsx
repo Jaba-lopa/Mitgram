@@ -13,7 +13,6 @@ const AuthForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
-
     return (
         <form className={cl.AuthForm}>
             <div>
@@ -37,7 +36,9 @@ const AuthForm = () => {
                       </svg>
                      }
                      placeholder="password"
-                     state={password} setState={setPassword}/>
+                     state={password} setState={setPassword}
+                     type="password"
+                     />
                      {formType === 'register'
                         ?   <InputLine
                             svg={

@@ -1,0 +1,17 @@
+@import 'app/globalVariables';
+
+.NullRoomPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $messagesColor;
+    div {
+        font-size: 0.9rem;
+        color: #fff;
+        padding: 0.3rem 1rem;
+        background-color: $primaryColor;
+        border-radius: 1rem;
+    }
+}

@@ -1,0 +1,27 @@
+@import 'app/globalVariables';
+
+.BackSpaceModal{ 
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(#1f1f1f, 0.8);
+    z-index: 90;
+    * {
+        color: #fff;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .CreateRoomModal {
+        background-color: $primaryColor;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 15rem;
+        height: 'max-content';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; 
+    }
+}

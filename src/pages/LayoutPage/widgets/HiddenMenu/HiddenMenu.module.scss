@@ -1,0 +1,23 @@
+@import 'app/globalVariables';
+
+.HiddenMenu{
+    position: absolute;
+    z-index: 10;
+    background-color: $primaryColor;
+    height: 100%;
+    width: 30vw;
+    transition: 0.4s;
+    * {
+        color: #fff;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        cursor: pointer;
+    }
+
+
+}

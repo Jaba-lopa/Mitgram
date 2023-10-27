@@ -1,0 +1,13 @@
+.RoomListItem{
+    padding: 0.5rem;
+    border-bottom: 1px solid #4e4e50;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+        background-color: rgb(#1f1f1f, 0.1);
+    }
+    .RoomName{
+        font-size: 0.7rem;
+        color: #fff;
+    }
+}

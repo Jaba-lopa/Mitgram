@@ -1,0 +1,28 @@
+@import 'app/globalVariables';
+
+.RoomsWrapper{
+    height: 100%;
+
+    .line{
+        height: 5px;
+        width: 100%;
+        background-color: $dopColor;
+    }
+    .Rooms {
+        overflow-y: scroll;
+        .allRooms {
+            color: #fff;
+            padding: 0 0 1rem 0.2rem;
+        }
+    }
+}
+
+.RoomsSort {
+    height: 10%;
+    width: 90%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr;
+    align-items:center;
+}

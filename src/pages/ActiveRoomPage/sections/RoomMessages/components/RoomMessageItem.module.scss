@@ -1,0 +1,18 @@
+@import 'app/globalVariables';
+.RoomMessageItem {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    width: max-content;
+    height: max-content;
+    &>div{
+        background-color: $primaryColor;
+        padding: 10px;
+        border-radius: 0.5rem;
+
+        font-size: 0.8rem;
+
+        .sender {
+            color: #3dc0ce;
+        }
+    }
+}

@@ -3,11 +3,12 @@
     border: 3px solid #5471D8;
     padding: 2.5rem;
     border-radius: 0.5rem;
+    background-color: #fff;
     &>div{
         .AuthForm__inputs {
             // inputs
             &>div {
-                margin-bottom: 0.25rem;
+                margin-bottom: 1rem;
             }
         }
         .AuthForm__buttons {
